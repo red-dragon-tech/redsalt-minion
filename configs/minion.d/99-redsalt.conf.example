@@ -1,0 +1,24 @@
+# redsalt-minion Salt minion configuration.
+# Copy to /etc/salt/minion.d/99-redsalt.conf on each minion.
+
+# DNS name or IP address of the Salt master.
+master: salt.example.internal
+
+# Stable minion ID. Prefer the host's inventory name, not a transient cloud hostname.
+id: example-vllm-node
+
+# These match the redsalt-master base environment.
+saltenv: base
+pillarenv: base
+
+# Keep startup conservative. Operators should preview highstate from the master.
+startup_states: ''
+
+# Optional: pin the master public key fingerprint after first verification.
+# master_finger: 'aa:bb:cc:dd:...'
+
+# Retry settings keep minions resilient during master restarts.
+random_reauth_delay: 60
+recon_default: 1000
+recon_max: 59000
+recon_randomize: True

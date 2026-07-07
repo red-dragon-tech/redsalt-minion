@@ -1,0 +1,11 @@
+# /etc/salt/grains example for redsalt-minion inventory metadata.
+# Roles here are informational only. redsalt-master applies roles from pillar.
+
+redsalt:
+  environment: prd
+  roles:
+    - base
+    - docker
+    - nvidia
+    - llm_vllm
+  managed_by: redsalt-minion
