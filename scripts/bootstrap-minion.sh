@@ -84,7 +84,7 @@ install_minion_apt() {
 
 install_minion_bootstrap() {
   tmp_script="$(mktemp)"
-  curl -fsSL https://bootstrap.saltproject.io -o "$tmp_script"
+  curl -fsSL https://github.com/saltstack/salt-bootstrap/releases/latest/download/bootstrap-salt.sh -o "$tmp_script"
   sh "$tmp_script" -P stable
   rm -f "$tmp_script"
 }
